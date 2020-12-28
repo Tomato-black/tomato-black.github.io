@@ -26,3 +26,8 @@ Spring-jdbc异常处理
           该实现类是将定义好的数据库异常码转换到对应的Spring的异常，因此可以做到准确的异常匹配
        （2）、SQLStateSQLExceptionTranslator
           该实现类是将java.sql.SQLException转换为Spring的异常，因此准确性不是很高，依赖于java.sql.SQLException
+
+3、Spring-jdbc 对各个数据库异常码的维护
+ 
+    a、SQLErrorCodes 
+    b、SQLErrorCodesFactory & sql-error-codes.xml
