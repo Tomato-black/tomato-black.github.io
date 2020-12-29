@@ -151,4 +151,21 @@ Spring-jdbc异常处理
 3、Spring-jdbc 对各个数据库异常码的维护
  
     a、SQLErrorCodes 
+	   
+```java
+    @Nullable
+	private CustomSQLErrorCodesTranslation[] customTranslations;
+```
+    通过此属性，可以自定义sql异常转换
+```java
+	public void setExceptionClass(@Nullable Class<?> exceptionClass) {
+		if (exceptionClass != null && !DataAccessException.class.isAssignableFrom(exceptionClass)) {
+			throw new IllegalArgumentException("Invalid exception class [" + exceptionClass +
+					"]: needs to be a subclass of [org.springframework.dao.DataAccessException]");
+		}
+		this.exceptionClass = exceptionClass;
+	}
+```	
+   但是需要注意 ```CustomSQLErrorCodesTranslation``` 中 ```setExceptionClass``` 方法校验了，异常只能```DataAccessException``` 的子类
+
     b、SQLErrorCodesFactory & sql-error-codes.xml
