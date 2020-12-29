@@ -166,6 +166,6 @@ Spring-jdbc异常处理
 		this.exceptionClass = exceptionClass;
 	}
 ```	
-   但是需要注意 ```CustomSQLErrorCodesTranslation``` 中 ```setExceptionClass``` 方法校验了，异常只能```DataAccessException``` 的子类
+   但是需要注意 ```CustomSQLErrorCodesTranslation``` 中 ```setExceptionClass``` 方法校验了，异常只能是```DataAccessException``` 的子类
 
     b、SQLErrorCodesFactory & sql-error-codes.xml
